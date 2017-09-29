@@ -1,3 +1,5 @@
+# Access server by http://localhost:8080/
+
 from bottle import run, route, get, post, request # or route
 
 @get('/login') # or @route('/login')
