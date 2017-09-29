@@ -3,7 +3,7 @@
 
 from bottle import run, route, get, post, request # or route
 
-@get('/login') # or @route('/login')
+@get('/login') # or @route('/login'); default method of route() is GET
 def login():
     return '''
         <form action="/login" method="post">
@@ -21,5 +21,9 @@ def do_login():
         return "<p>Your login information was correct.</p>"
     else:
         return "<p>Login failed.</p>"
+    
+@route('/static/<filename>')    # Sending a static file (such as an image or CSS file)
+def server_static(filename):
+    return static_file(filename, root='/path/to/your/static/files')     # cannot use relative path "./" 
 
 run(host='localhost', port=8080, debug=True)	# runs the server
