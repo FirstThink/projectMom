@@ -1,3 +1,4 @@
+# Bottle tutorial at: (https://bottlepy.org/docs/dev/tutorial.html#request-routing)
 # Access server by http://localhost:8080/
 
 from bottle import run, route, get, post, request # or route
